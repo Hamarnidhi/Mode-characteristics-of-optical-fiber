@@ -1,85 +1,54 @@
-# Mode-characteristics-of-optical-fiber
-# AIM
-To study the mode characteristics of fiber optic cable and observe the lower order Linearly Polarized (LP) modes.
+# Introduction-to-Optiperformer
+
+
+## Aim
+Download and install OptiPerformer software on your computer and run a sample file.
+
+## Software required
+Optiwave introduces OptiPerformer, a free photonic design automation tool which harnesses the full power of OptiSystem and creates specific dynamic design scenarios which can be used by students.
+
+The system is *instrumented* with:
+- An optical power meter at the input to the receiver (or the output of the fiber)  
+- A bit error rate (BER) analyzer
 
 ---
 
-# Equipments Required
-1. LASER Source (633 nm – 1mW)  
-2. Source to Fiber Coupler  
-3. Single Mode Fiber  
-4. Fiber Holding Stand  
-5. Opaque Screen  
+## Procedure
 
----
+1. Download and install OptiPerformer from the [optiwave.com](https://optiwave.com) website.
+2. Copy the `Introduction_OptiPerformer.osp` file to your PC.
+3. Start OptiPerformer.
+4. Use either the **File menu** or the **Open File** button to open the Fiber Optic System File.
+5. Study the layout, which includes text and boxes identifying the three components of the fiber optic system:
+   - **Transmitter section**: binary source (PRBS generator), electrical pulse generator, laser diode, external modulator  
+   - **Receiver section**: photodiode, low-pass filter, decision circuit (with BER analyzer)  
+   *(These components will be covered in more detail later in the course.)*
+6. Run the simulation by pressing the **Start** button.  
+   - Progress will be displayed.  
+   - The message *“Calculation Finished!”* will appear when complete.
+7. Double-click on the optical power meter and BER analyzer.  
+   - Move the windows as necessary for clarity.  
+   - In the BER window, check the box **Show Eye Diagram**.  
+   - The optical power meter shows power at the photodiode input in both watts and dBm.  
+   - The BER window displays the eye diagram and quantities including **Max Q Factor** and **Min BER**.
+8. The simulation runs **5 iterations**, with fiber length varying from 50 km to 150 km in 5 steps.  
+   - The index is displayed in the upper right corner of the layout.  
+   - Use the forward/reverse buttons in the lower left to step through iterations.  
+   - Note changes in received power and BER display (eye diagram, Q factor, BER) with fiber length.
+## REPORT
+<img width="1087" height="592" alt="image" src="https://github.com/user-attachments/assets/3059b112-2762-4378-944f-3526294397fa" />
 
-# Theory
-The central spot carries 95% of the intensity for laser beams with Gaussian profile.  
 
-\[
-I = I_0 e^{-2(r / w)^2}
-\]
+## TABLE
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/8187400b-dfa9-481f-af58-8bc84f33ee0b" />
 
-where \(e = 2.718\) is the base of the natural logarithm.  
+## DESCRIPTION
+OptiPerformer is used to simulate a basic fiber optic communication system.
+The system includes a transmitter, optical fiber channel, and receiver.
+An optical power meter and BER analyzer are used for performance analysis.
+The simulation is run for five iterations with fiber length from 50 km to 150 km.
+Received power, eye diagram, Q-factor, and BER are observed for each iteration.
 
-- An accepted definition of a radius of a Gaussian beam is at 0.135 times its peak value \(I_0\).  
-- This radius is called **spot size**. The spot diameter is \(w\).  
-
-**Spot Diameter (d) micron** = Focal length of the Lens (f) mm × Laser beam full divergence angle (DA) mrad.  
-
-To achieve maximum coupling efficiency, the fiber core diameter must be larger than the spot diameter.  
-
-\[
-NA = \frac{\text{Laser Beam Diameter (B.D.)}}{2 \times \text{Lens Focal Length (f)}}
-\]
-
-The source coupler consists of two base plates:  
-- One base plate contains a focusing lens and a female connector receptacle.  
-- The other base plate attaches to the laser.  
-- An O-ring is sandwiched between the plates, with threaded screws interconnecting them.  
-- A screwdriver can adjust angular orientation by turning the screws.  
-
-**Modes and V-number:**  
-- The number of modes propagating through the fiber depends on the **V-number**.  
-- If \(V < 2.045\), only a single mode propagates (HE11 or LP01 mode).  
-- If \(V > 2.045\), multiple modes propagate.  
-- For \(V = 4.91\), four Linearly Polarized modes propagate through the fiber.  
-
----
-
-# Procedure
-1. Place the optical breadboard on a flat table surface.  
-2. Fix the cylindrical head of the He-Ne laser source onto the breadboard securely.  
-3. Mount the laser to the fiber coupler with its base plate oriented toward the laser exit.  
-4. Switch on the He-Ne laser and align the beam spot centrally on the coupling lens assembly. Tighten screws.  
-5. Check for back reflection from the rod lens of the coupler. Adjust screws until the reflected spot aligns with the laser exit.  
-6. Confirm central alignment using a white card sheet. Adjust screws if the spot is off-center.  
-7. Connect the multimode optical patch cord to the coupler and secure the other end in the fiber holding stand.  
-8. Observe the bright laser spot exiting the fiber. Adjust fiber tip height to ~50 mm above the paper sheet.  
-9. View the multimode speckle pattern on the screen. Adjust screws to refine the pattern. Replace with single mode fiber.  
-10. For single mode fiber, observe blur patterns with lobes (two, three, or four) by fine-tuning the coupler screws.  
-
----
-<img width="618" height="722" alt="image" src="https://github.com/user-attachments/assets/b611cde3-a1f1-4bf4-ac7a-9de89f4b6f53" />
-
-# Observation and Calculation
-Parameters of given fiber:  
-- Core radius \(A = 4.5 \, \mu m\)  
-- Numerical Aperture \(NA = 0.11\)  
-- Wavelength \(\lambda = 633 \, nm\)  
-
-\[
-V = \frac{2 \pi \cdot A \cdot NA}{\lambda} = 4.91
-\]
-
-- From the figure, only **4 LP modes** propagate.  
-- Total number of modes:  
-
-\[
-\frac{V^2}{2} = \frac{(4.91)^2}{2} \approx 12.05
-\]
-
----
-
-# Result
-The fiber supports **4 Linearly Polarized (LP) modes** at the given parameters.
+## RESULT
+The simulation was successfully executed using OptiPerformer software.
+It was observed that as fiber length increases, received optical power decreases and BER increases.
